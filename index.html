@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <title>genetic algo by dragos strugar</title>
+
+    <link rel="stylesheet" href="css/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://netdna.bootstrapcdn.com/font-awesome/3.1.0/css/font-awesome.css"
+    />
+  </head>
+
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+
+    <script src="js/helper.js"></script>
+
+    <style>
+      #pictureframe {
+        width: 730px;
+        margin-bottom: 15px;
+        border: 2px solid #000;
+      }
+
+      #pictureframe .picture {
+        width: 350px;
+        height: 350px;
+        margin: 8px;
+
+        /* inactive canvas appearance */
+        background: solid;
+        background-color: #222;
+        -webkit-box-shadow: inset 0 0 20px #000;
+        -moz-box-shadow: inset 0 0 20px #000;
+        box-shadow: inset 0 0 20px #000;
+      }
+
+      #pictureframe .btn-toolbar {
+        margin-top: 0;
+      }
+
+      /* start/stop buttons */
+      .control-btn {
+        width: 150px !important;
+        font-weight: bold;
+      }
+
+      /* icons */
+      i {
+        margin-left: 6px;
+      }
+
+      .icon-large {
+        margin-left: 0px;
+        margin-right: 6px;
+      }
+
+      .tooltip-inner {
+        max-width: 450px;
+      }
+
+      /* hidden file chooser. just shunt this out of the way somewhere */
+      #file-chooser {
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        left: -1000px;
+        width: 1px;
+        height: 1px;
+      }
+
+      /* tables */
+      .conf-table,
+      #analytics-table {
+        font-size: 16px;
+        table-layout: fixed;
+        margin-top: 15px;
+      }
+
+      .conf-table td {
+        border-top: none;
+      }
+    </style>
+
+    <div id="wrap">
+      <div class="container">
+        <div class="headline">
+          <h1 class="headline-title">
+            run
+          </h1>
+        </div>
+
+        <div class="row">
+          <!-- pictures -->
+          <div id="pictureframe">
+            <canvas
+              id="referenceCanvas"
+              class="picture"
+              width="512"
+              height="512"
+              style="margin-right: 4px;"
+            ></canvas>
+            <canvas
+              id="outputCanvas"
+              class="picture"
+              width="512"
+              height="512"
+              style="margin-left: 4px;"
+            ></canvas>
+
+            <!-- button bar -->
+            <div class="btn-toolbar">
+              <div class="btn-group">
+                <button
+                  id="stop"
+                  class="btn control-btn btn-danger"
+                  style="margin-left: 230px;"
+                  disabled
+                >
+                  Stop
+                </button>
+
+                <button id="start" class="btn control-btn btn-success" disabled>
+                  Start
+                </button>
+              </div>
+              <!-- /.btn-group -->
+            </div>
+          </div>
+          <!-- /#pictureframe -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <div id="push"></div>
+    </div>
+
+    <img src="img/idk.jpg" id="referenceImage" style="display: none;" />
+
+    <canvas id="workingCanvas" width="1" height="1"></canvas>
+
+    <div class="underlay"></div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
