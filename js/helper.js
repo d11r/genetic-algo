@@ -1,18 +1,3 @@
-/*
- * Extra plugins for enabling Flat UI components.
- *
- * Contains:
- *     jquery.placeholder.js
- *     jquery.tagsinput.js
- *     bootstrap-select.js
- *     bootstrap-switch.js
- *     flatui-checkbox.js
- *     flatui-radio.js
- *
- *     + Some general UI pack related JS
- */
-
-/*! http://mths.be/placeholder v2.0.7 by @mathias */
 (function(window, document, $) {
   var isInputSupported = "placeholder" in document.createElement("input"),
     isTextareaSupported = "placeholder" in document.createElement("textarea"),
@@ -505,10 +490,8 @@
         })
         .toArray();
 
-      //Convert all the values into a comma delimited string
       var title = selectedItems.join(", ");
 
-      //If this is multi select, and the selectText type is count, the show 1 of 2 selected etc..
       if (
         _this.multiple &&
         _this.options.selectedTextFormat.indexOf("count") > -1
